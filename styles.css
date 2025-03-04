@@ -13,16 +13,18 @@ header {
     color: #333; /* Darker text for contrast */
     padding: 20px;
     text-align: center;
-    position: relative; /* Added to enable absolute positioning for logo */
+    position: relative; /* This allows for absolute positioning within the header */
 }
 
 header .logo {
     position: absolute; /* Absolute positioning for the logo */
     top: 20px; /* Adjust the distance from the top */
-    left: 20px; /* Adjust the distance from the right */
+    left: 20px; /* Adjust the distance from the left */
     width: 50px; /* Set a fixed width for the logo */
     height: auto; /* Maintain the aspect ratio */
 }
+
+/* Navigation Styles */
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -55,6 +57,7 @@ main {
     gap: 20px;
 }
 
+/* Product Item Styles */
 .product-item {
     background-color: white;
     padding: 15px;
@@ -62,29 +65,41 @@ main {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 250px;
-    transition: background-color 0.3s ease-in-out; /* Smooth transition effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced out evenly */
+    height: 500px; /* Fixed height for all product cards, large enough to fit the biggest image */
+    box-sizing: border-box; /* Makes sure padding is included in the total height */
+}
+
+/* Image Styles */
+.product-item img {
+    width: 100%;
+    height: auto;
+    max-height: 250px; /* Set a max height for the images so they don't stretch too much */
+    object-fit: cover; /* Ensures images maintain their aspect ratio and fill the space */
+    margin-bottom: 15px; /* Ensures space between image and description */
+}
+
+/* Product Description (h2) */
+.product-item h2 {
+    font-size: 18px;
+    margin: 10px 0;
+    flex-grow: 0; /* Prevent description from growing and pushing other content down */
+}
+
+/* Price Styles */
+.product-item p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000; /* Price color changed to black */
+    margin-top: auto; /* Ensures the price stays at the bottom of the card */
+    margin-bottom: 0; /* No margin below the price */
 }
 
 /* Hover Effect - Light Yellow Background */
 .product-item:hover {
     background-color: #FFF9C4; /* Light Yellow */
-}
-
-.product-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.product-item h2 {
-    font-size: 18px;
-    margin: 10px 0;
-}
-
-.product-item p {
-    font-size: 16px;
-    font-weight: bold;
-    color: #388E3C; /* Dark Green accent */
 }
 
 /* Footer */
